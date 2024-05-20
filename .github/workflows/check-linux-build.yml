@@ -1,0 +1,24 @@
+name: Test
+on:
+  push:
+
+concurrency:
+  group: check-build-lin-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build - ${{ matrix.config.os }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: ubuntu-22.04
+            name: "Ubuntu 22.02"
+    steps:
+      - name: Test
+        shell: bash
+        run: |
+          gcc --version
+          
