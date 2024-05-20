@@ -18,7 +18,7 @@ jobs:
             name: "Ubuntu 24.04"
     steps:
       - name: Install Cuda
-        uses: Jimver/cuda-toolkit@v0.2.10
+        uses: Jimver/cuda-toolkit@v0.2.15
         with:
           cuda: '11.7.0'
 
