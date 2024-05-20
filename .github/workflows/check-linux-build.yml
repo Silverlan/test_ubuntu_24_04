@@ -17,8 +17,12 @@ jobs:
           - os: ubuntu-22.04
             name: "Ubuntu 22.02"
     steps:
+      - name: Install Cuda
+        uses: Jimver/cuda-toolkit@v0.2.10
+        with:
+          cuda: '11.7.0'
+
       - name: Test
         shell: bash
         run: |
           gcc --version
-          
